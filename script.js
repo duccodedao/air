@@ -21,13 +21,35 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-
-// script.js
-function toggleSidebar() {
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('open');
-}
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const link1Toggle = document.getElementById('link-1-toggle');
+    const link1Submenu = document.getElementById('link-1-submenu');
 
+    menuToggle.addEventListener('click', function() {
+        if (sidebar.style.left === '0px') {
+            sidebar.style.left = '-300px';
+            menuIcon.style.display = 'inline';
+            closeIcon.style.display = 'none';
+        } else {
+            sidebar.style.left = '0px';
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'inline';
+        }
+    });
+
+    link1Toggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (link1Submenu.style.display === 'block') {
+            link1Submenu.style.display = 'none';
+        } else {
+            link1Submenu.style.display = 'block';
+        }
+    });
+});
 
 
 
