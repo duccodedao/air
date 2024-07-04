@@ -8,21 +8,29 @@
       <link rel="icon" type="image/x-icon" href="logo/bm.png">
 </head>
 <body>
-    <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="nap/p2p.html">Nạp tiền</a>
-        <a href="rut/ruttien.html">Rút tiền</a>
-        <a href="giacoin/crypto.html">Giá coin</a>
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="menu-icon">&#9776;</span>
+        <span class="close-icon">&times;</span>
     </div>
-
-    <div id="main">
-        <span class="openbtn" onclick="openNav()">&#9776; Mở menu</span>
-  
-
+    <div class="sidebar" id="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li class="has-submenu">
+                <a href="#" id="link-1-toggle">Nạp & Rút</a>
+                <ul class="submenu" id="link-1-submenu">
+                    <li><a href="nap/p2p.html">Nạp tiền</a></li>
+                    <li><a href="rut/ruttien.html">Rút tiền</a></li>
+                </ul>
+            </li>
+            <li><a href="giacoin/crypto.html">Giá coin</a></li>
+            <li><a href="https://t.me/bmassk3_bot">Telegram</a></li>
+        </ul>
+    </div>
+   
 
     <div class="container">
         <div class="header">
-                <div  class="logo">Airdrop Telegram</div>
+                <div  class="logo"> </div>
             <button  class="join-button" onclick="window.open('https://t.me/bmassk3_bot', '_blank')">Tham gia ngay</button>
         </div>
         <div class="content">
@@ -38,9 +46,7 @@
                 <a href="https://x.com/BmassK3" target="_blank">
                     <img src="info/x-icon.png" alt="X" class="contact-icon">
                 </a>
-            </div>   
-            <p>Tham gia ngay, nhận ngay - Airdrop trên Telegram!</p>
-            <p>Tổng hợp các kèo tiềm năng</p>
+            </div>
             <div class="preparation">
                 <h2>DỰ ÁN TIỀM NĂNG</h2>
             <div class="links">
@@ -153,7 +159,6 @@
                 </div>
             </div>
         </footer>
-
 
 
 
