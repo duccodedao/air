@@ -1,95 +1,75 @@
-/* styles.css */
-
-/* Đặt kiểu chữ và căn lề chung */
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
-    background: url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg') no-repeat fixed center;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
-/* Tiêu đề chính */
 h2 {
-    color: #f1f1f1;
+    color: #ffffff;
+    text-align: center;
     margin: 20px 0;
-    font-weight: 300;
     font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* Định dạng các nút đăng ký sàn giao dịch */
 .registration-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
     margin: 20px 0;
+    gap: 15px;
 }
 
 .ico-btn {
-    display: block;
-    width: 140px;
-    height: 140px;
-    background-color: #1e1e1e;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
     text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .ico-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 120px;
+    height: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ico-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    border-color: #007bff;
+    transform: scale(1.05);
 }
 
-/* Định dạng phần các bước tham gia */
-.steps, .preparation {
-    max-width: 600px;
-    margin: 20px 20px;
-    padding: 20px;
+.ico-btn img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.5);
+}
+
+.preparation,
+.steps {
     background-color: #1e1e1e;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.steps h2, .preparation h2 {
-    font-weight: 400;
-    color: #f1f1f1;
-    margin-bottom: 15px;
-}
-
-.steps ol, .preparation ol {
-    padding-left: 20px;
-}
-
-.steps ol li, .preparation ol li {
-    margin-bottom: 10px;
-    line-height: 1.8;
-    color: #cccccc;
-}
-
-/* Định dạng cho phần đăng ký sàn cho người Việt */
-.preparation {
-    max-width: 600px;
+    padding: 20px;
     margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
 }
 
-.preparation h2 {
-    text-align: center;
-    font-weight: 300;
-    color: #f1f1f1;
-    margin-bottom: 15px;
+.steps ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+.steps ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.steps ol li::marker {
+    color: #007bff;
 }
