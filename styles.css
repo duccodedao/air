@@ -364,45 +364,106 @@ button:hover {
     color: #28a745;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* Sidebar styles */
-.sidebar {
-  height: 100%;
-  width: 0;
+.menu-toggle {
   position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #00000065;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
+.menu-toggle .close-icon {
+  display: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #1e1e1ebb;
   color: #ffffff;
+  overflow-x: hidden;
+  transition: left 0.5s ease, box-shadow 0.5s ease;
+  z-index: 999;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.sidebar ul li a {
+  color: #ffffff;
+  text-decoration: none;
   display: block;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
 }
 
-.sidebar a:hover {
-  color: #c53d3d;
+.sidebar ul li a:hover {
+  background-color: #007bff;
+  padding-left: 30px;
 }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+/* Submenu styles */
+.submenu {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  background-color: #2a2a2a;
+  border-left: 4px solid #007bff;
 }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
+.submenu li {
+  padding: 8px 20px;
+  font-size: 16px;
 }
+
+.submenu li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: #007bff;
+}
+
+
+
+
+
+
+
 
 /* Open/close button */
 .openbtn {
