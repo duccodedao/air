@@ -421,6 +421,7 @@ button:hover {
 }
 
 .sidebar ul li a {
+  border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
   display: block;
