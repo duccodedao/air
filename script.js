@@ -158,3 +158,18 @@ function closeNav() {
     document.getElementById("sidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
 }
+
+
+
+Swal.fire({
+
+    title: 'Xin chào!',
+    text: 'Sơn Lý Hồng Đức chúc bạn một ngày tốt lành!',
+    imageUrl: 'https://duccodedao.github.io/Images/20240330_1113021.gif', // Thay 'link_to_your_image.jpg' bằng đường dẫn đến hình ảnh của bạn
+    imageHeight: 'auto', // Thiết lập chiều cao tự động cho hình ảnh
+    showConfirmButton: false, // Ẩn nút xác nhận
+    customClass: {
+      popup: 'swal2-show-loading' // Thêm class để tạo hiệu ứng loading
+    }
+  });
+

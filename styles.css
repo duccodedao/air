@@ -373,9 +373,8 @@ button:hover {
 
 
 
-
-/* Sidebar styles */
-.menu-toggle {
+ /* Sidebar styles */
+ .menu-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -409,6 +408,32 @@ button:hover {
   margin-bottom: 20px;
 }
 
+.sidebar .notifications {
+  margin: 20px;
+}
+
+.sidebar .notifications h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar .notification {
+  background-color: #0099ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .notification img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
 .sidebar ul {
   list-style-type: none;
   padding: 0;
@@ -421,7 +446,6 @@ button:hover {
 }
 
 .sidebar ul li a {
-  border-radius: 50px;
   color: #ffffff;
   text-decoration: none;
   display: block;
@@ -458,7 +482,6 @@ button:hover {
 .submenu li a:hover {
   background-color: #007bff;
 }
-
 
 
 
