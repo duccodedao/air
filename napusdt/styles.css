@@ -73,6 +73,7 @@ button {
     transition: background-color 0.3s ease-in-out;
     flex: 1;
     margin: 0 5px;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -97,22 +98,35 @@ button:active {
     }
 }
 
+
+
+
+
+
+
 #historyTable {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #historyTable th,
 #historyTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px 15px;
     text-align: left;
 }
 
 #historyTable th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+#historyTable tr {
+    transition: background-color 0.3s ease;
 }
 
 #historyTable tr:hover {
@@ -122,6 +136,49 @@ button:active {
 #historyTable tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+#historyTable td {
+    border-bottom: 1px solid #ddd;
+}
+
+#historyTable td:last-child {
+    border-right: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .swal2-popup {
     font-size: 16px;
