@@ -21,36 +21,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const menuIcon = document.querySelector('.menu-icon');
-    const closeIcon = document.querySelector('.close-icon');
-    const link1Toggle = document.getElementById('link-1-toggle');
-    const link1Submenu = document.getElementById('link-1-submenu');
+document.addEventListener("DOMContentLoaded", function() {
+    var menuToggle = document.getElementById('menu-toggle');
+    var sidebar = document.getElementById('sidebar');
+    var menuIcon = document.querySelector('.menu-toggle .menu-icon');
+    var closeIcon = document.querySelector('.menu-toggle .close-icon');
 
     menuToggle.addEventListener('click', function() {
-        if (sidebar.style.left === '0px') {
+        if (sidebar.style.left === '-300px') {
+            sidebar.style.left = '0';
+            menuIcon.style.display = 'none';
+            closeIcon.style.display = 'inline';
+        } else {
             sidebar.style.left = '-300px';
             menuIcon.style.display = 'inline';
             closeIcon.style.display = 'none';
-        } else {
-            sidebar.style.left = '0px';
-            menuIcon.style.display = 'none';
-            closeIcon.style.display = 'inline';
         }
     });
 
-    link1Toggle.addEventListener('click', function(event) {
+    var submenuToggle = document.getElementById('link-1-toggle');
+    var submenu = document.getElementById('link-1-submenu');
+
+    submenuToggle.addEventListener('click', function(event) {
         event.preventDefault();
-        if (link1Submenu.style.display === 'block') {
-            link1Submenu.style.display = 'none';
+        if (submenu.style.display === 'none' || submenu.style.display === '') {
+            submenu.style.display = 'block';
         } else {
-            link1Submenu.style.display = 'block';
+            submenu.style.display = 'none';
         }
     });
 });
-
 
 
 
@@ -160,16 +160,4 @@ function closeNav() {
 }
 
 
-
-Swal.fire({
-
-    title: 'Xin chào!',
-    text: 'Sơn Lý Hồng Đức chúc bạn một ngày tốt lành!',
-    imageUrl: 'https://duccodedao.github.io/Images/20240330_1113021.gif', // Thay 'link_to_your_image.jpg' bằng đường dẫn đến hình ảnh của bạn
-    imageHeight: 'auto', // Thiết lập chiều cao tự động cho hình ảnh
-    showConfirmButton: false, // Ẩn nút xác nhận
-    customClass: {
-      popup: 'swal2-show-loading' // Thêm class để tạo hiệu ứng loading
-    }
-  });
 
