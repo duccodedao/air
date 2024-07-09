@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+    const path = window.location.pathname;
+    if (path.includes('history.html')) {
+        loadHistory();
+    }
+});
+
 async function getExchangeRate() {
     const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=vnd');
     const data = await response.json();
@@ -73,14 +80,43 @@ function promptTransactionCode(email, network, walletAddress, totalAmount) {
             if (!transactionCode) {
                 Swal.showValidationMessage('Vui lòng nhập mã giao dịch');
             } else {
+                saveTransactionHistory(walletAddress, totalAmount, transactionCode);
                 sendTransactionInfo(email, network, walletAddress, totalAmount, transactionCode);
             }
         }
     });
 }
 
+function saveTransactionHistory(walletAddress, amount, transactionCode) {
+    const history = JSON.parse(localStorage.getItem('transactionHistory')) || [];
+    const dateTime = new Date().toLocaleString();
+    const shortWalletAddress = walletAddress.length > 6 ? `${walletAddress.slice(0, 3)}...${walletAddress.slice(-3)}` : walletAddress;
+    const newRecord = { dateTime, shortWalletAddress, amount, transactionCode };
+    history.push(newRecord);
+    localStorage.setItem('transactionHistory', JSON.stringify(history));
+    if (window.location.pathname.includes('history.html')) {
+        addHistoryRow(newRecord);
+    }
+}
+
+function addHistoryRow(record) {
+    const tableBody = document.querySelector('#historyTable tbody');
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>${record.dateTime}</td>
+        <td>${record.shortWalletAddress}</td>
+        <td>${record.amount}</td>
+        <td>${record.transactionCode}</td>
+    `;
+    tableBody.appendChild(row);
+}
+
+function loadHistory() {
+    const history = JSON.parse(localStorage.getItem('transactionHistory')) || [];
+    history.forEach(addHistoryRow);
+}
+
 function sendTransactionInfo(email, network, walletAddress, totalAmount, transactionCode) {
-    // Giả sử bạn có một API để gửi thông tin giao dịch
     console.log('Thông tin giao dịch:', {
         email,
         network,
@@ -89,13 +125,8 @@ function sendTransactionInfo(email, network, walletAddress, totalAmount, transac
         transactionCode
     });
 
-    // Tạo nội dung cho Messenger
     const messageContent = `Nạp USDT - ${walletAddress} - ${network} - ${transactionCode}`;
-
-    // Tạo link chuyển hướng tới Messenger với nội dung đã tạo
     const messengerLink = `https://m.me/100082985042125?text=${encodeURIComponent(messageContent)}`;
-    
-    // Chuyển hướng
     window.location.href = messengerLink;
 
     Swal.fire({
@@ -103,6 +134,14 @@ function sendTransactionInfo(email, network, walletAddress, totalAmount, transac
         text: 'Đang chuyển hướng đến Messenger...',
         icon: 'success',
         showConfirmButton: false,
-        timer: 2000  // Hiển thị thông báo thành công trong 2 giây
+        timer: 2000
     });
+}
+
+function viewTransactionHistory() {
+    window.location.href = 'history.html';
+}
+
+function goBack() {
+    window.location.href = 'index.html';
 }
