@@ -17,31 +17,22 @@ body {
     padding: 40px;
     box-sizing: border-box;
     text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-    color: #333;
+h2 {
     margin-bottom: 20px;
-    font-size: 28px;
-    font-weight: bold;
+    color: #333;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: left;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    color: #666;
-    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
 }
 
 input[type="email"],
@@ -49,9 +40,9 @@ input[type="text"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 14px;
-    border: none;
-    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
     transition: border-bottom-color 0.3s ease-in-out;
@@ -65,6 +56,12 @@ select:focus {
     border-bottom-color: #4CAF50;
 }
 
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
 button {
     background-color: #4CAF50;
     color: #fff;
@@ -74,6 +71,8 @@ button {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    flex: 1;
+    margin: 0 5px;
 }
 
 button:hover {
@@ -88,79 +87,112 @@ button:active {
     .container {
         padding: 30px;
     }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    button {
+        margin: 10px 0;
+    }
 }
 
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#historyTable th,
+#historyTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#historyTable th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+#historyTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+#historyTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
 .swal2-popup {
-    font-size: 16px; /* Kích thước font chữ chung */
+    font-size: 16px;
 }
 
 .swal2-title {
-    font-size: 24px; /* Kích thước font chữ cho tiêu đề */
+    font-size: 24px;
 }
 
 .swal2-content {
-    font-size: 18px; /* Kích thước font chữ cho nội dung */
+    font-size: 18px;
 }
 
 .swal2-input {
-    font-size: 16px; /* Kích thước font chữ cho ô nhập liệu */
+    font-size: 16px;
 }
 
 .swal2-actions {
-    font-size: 16px; /* Kích thước font chữ cho các nút */
+    font-size: 16px;
 }
 
 .swal2-validation-message {
-    font-size: 14px; /* Kích thước font chữ cho thông báo lỗi */
+    font-size: 14px;
 }
 
 .swal2-html-container {
-    max-width: 100%; /* Đảm bảo nội dung không bị tràn ra ngoài */
+    max-width: 100%;
 }
 
 .swal2-modal {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font chữ cho swal2 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .swal2-popup .swal2-content {
-    padding: 20px 24px; /* Padding cho nội dung swal2 */
+    padding: 20px 24px;
 }
 
 .swal2-popup .swal2-input {
-    width: 85%; /* Độ rộng của ô nhập liệu */
-    margin-bottom: 10px; /* Khoảng cách giữa các phần tử */
+    width: 85%;
+    margin-bottom: 10px;
 }
 
 .swal2-popup .swal2-actions {
     display: flex;
-    justify-content: center; /* Căn giữa các nút */
+    justify-content: center;
 }
 
 .swal2-popup .swal2-actions button {
-    margin: 0 10px; /* Khoảng cách giữa các nút */
-    padding: 12px 24px; /* Độ lớn của nút */
-    border-radius: 6px; /* Bo tròn góc của nút */
-    cursor: pointer; /* Con trỏ khi rê chuột */
-    transition: background-color 0.3s ease-in-out; /* Hiệu ứng khi di chuột qua nút */
+    margin: 0 10px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .swal2-popup .swal2-actions button.swal2-confirm {
-    background-color: #4CAF50; /* Màu nền của nút xác nhận */
-    color: #fff; /* Màu chữ của nút xác nhận */
-    border: none; /* Không viền */
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
 }
 
 .swal2-popup .swal2-actions button.swal2-confirm:hover {
-    background-color: #45a049; /* Màu nền khi di chuột qua nút xác nhận */
+    background-color: #45a049;
 }
 
 .swal2-popup .swal2-actions button.swal2-cancel {
-    background-color: #aaa; /* Màu nền của nút hủy */
-    color: #fff; /* Màu chữ của nút hủy */
-    border: none; /* Không viền */
+    background-color: #aaa;
+    color: #fff;
+    border: none;
 }
 
 .swal2-popup .swal2-actions button.swal2-cancel:hover {
-    background-color: #999; /* Màu nền khi di chuột qua nút hủy */
+    background-color: #999;
 }
