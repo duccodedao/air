@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
+window.addEventListener('load', function() {
+    const loadingScreen = document.getElementById('loading-screen');
+
+    // Giả lập việc tải nội dung trong 3 giây
+    setTimeout(function() {
+        loadingScreen.style.display = 'none';
+    }, 3000);
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var menuToggle = document.getElementById('menu-toggle');
     var sidebar = document.getElementById('sidebar');
