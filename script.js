@@ -17,6 +17,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('visitCount').innerText = visitCount;
 });
 
+document.getElementById('download-link').addEventListener('click', function() {
+    swal.fire({
+        title: 'Tải thành công!',
+        text: 'File blum.js đã được tải xuống thành công.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+});
+
+document.querySelectorAll('.contact-item').forEach(item => {
+    item.addEventListener('click', function() {
+        window.open(this.getAttribute('data-url'), '_blank');
+    });
+});
 
 
 
